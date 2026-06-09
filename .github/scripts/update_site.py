@@ -25,7 +25,7 @@ GEMINI_API_KEY  = os.environ.get("GEMINI_API_KEY", "")
 SITE_FILE       = "index.html"
 CACHE_FILE      = ".github/scripts/.content_cache.json"
 MAX_FEED_ITEMS  = 10   # max items to pull from each RSS feed
-GEMINI_MODEL    = "gemini-1.5-pro"
+GEMINI_MODEL    = "gemini-1.5-flash"
 
 # Sources to scrape
 SOURCES = {
