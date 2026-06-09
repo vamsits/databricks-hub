@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self' https://googleapis.com https://fonts.gstatic.com https://cloudflare.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cloudflare.com; style-src 'self' 'unsafe-inline' https://googleapis.com; font-src 'self' https://fonts.gstatic.com;"
