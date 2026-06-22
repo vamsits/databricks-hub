@@ -144,4 +144,142 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
   min-height: 75vh;
   background: var(--gradient-hero);
   display: flex; align-items: center;
-  padding-top:
+  padding-top: calc(var(--nav-height) + 2rem);
+  position: relative;
+  overflow: hidden;
+}
+#hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 150px;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+  pointer-events: none;
+}
+.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; }
+.hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.2); color: var(--accent-orange); padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+.hero-title { margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+.hero-title span { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-desc { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 640px; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; border-top: 1px solid var(--border); padding-top: 2rem; }
+.stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--text-primary); }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ===== CARDS & INTERACTIVE ELEMENTS ===== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-bright);
+  box-shadow: var(--shadow-card);
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--gradient-accent); opacity: 0; transition: opacity 0.3s;
+}
+.card:hover::before { opacity: 1; }
+.card-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent-orange); }
+.card-title { font-size: 1.3rem; margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 700; }
+.card-meta { display: flex; gap: 0.75rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: var(--bg-elevated); color: var(--text-secondary); }
+.badge-accent { background: rgba(0,194,168,0.1); color: var(--accent-teal); }
+
+/* ===== ACCORDION ===== */
+.accordion { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--bg-card); margin-bottom: 1.5rem; }
+.accordion-item { border-bottom: 1px solid var(--border); }
+.accordion-item:last-child { border-bottom: none; }
+.accordion-header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; background: none; border: none; width: 100%; text-align: left; cursor: pointer; font-family: var(--font-body); font-weight: 600; font-size: 1.1rem; color: var(--text-primary); transition: background 0.2s; }
+.accordion-header:hover { background: var(--bg-elevated); }
+.accordion-icon { transition: transform 0.3s; color: var(--text-muted); }
+.accordion-content { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; }
+.accordion-item.active .accordion-content { padding: 1.5rem; max-height: 2000px; }
+.accordion-item.active .accordion-icon { transform: rotate(180deg); color: var(--accent-orange); }
+
+/* ===== GLOSSARY ===== */
+.glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.glossary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.2s; }
+.glossary-card:hover { border-color: var(--accent-teal); background: var(--bg-hover); }
+.glossary-term { font-family: var(--font-mono); font-weight: 700; color: var(--accent-teal); margin-bottom: 0.5rem; font-size: 1rem; }
+.glossary-def { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* ===== FOOTER ===== */
+footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 4rem 0 2rem 0; font-size: 0.9rem; color: var(--text-secondary); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem; }
+.footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+.footer-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-links a { color: var(--text-secondary); transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.mobile-active { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 1.5rem; gap: 1rem; }
+  .hamburger { display: flex; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">D</div>
+      Databricks Knowledge Hub
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#updates" class="active">Updates</a>
+      <a href="#sql-best-practices">SQL Tuning</a>
+      <a href="#pyspark-best-practices">PySpark</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#resources">Resources</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="searchInput" placeholder="Search reference..." onkeyup="filterContent()">
+      </div>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header id="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tag">
+        <span class="badge-accent" style="padding: 2px 6px; border-radius: 10px; margin-right: 4px;">NEW</span>
+        Databricks 2026 Release Alignment
+      </div>
+      <h1 class="hero-title">The Ultimate <span>Databricks & Spark</span> Reference Hub</h1>
+      <p class="hero-desc">An expert-curated technical knowledge base for data engineers, architects, and platform administrators. Optimized for performance, cost efficiency, and modern lakehouse design patterns.</p>
+      <div class="flex gap-4">
+        <a href="#updates" class="btn btn-primary">Explore Latest Updates</a>
+        <a href="#sql-best-practices" class="btn btn-secondary">SQL Best Practices</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">4.3.0</div>
+        <div class="stat-label">Delta Lake Version</div>
+      </div>
+      <div>
+        <div class="stat-
