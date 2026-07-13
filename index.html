@@ -184,4 +184,39 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
 .card:hover::before { opacity: 1; }
 .card-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent-orange); }
 .card-title { font-size: 1.3rem; margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 700; }
-.card-meta { display: flex
+.card-meta { display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+
+/* ===== ACCORDION ===== */
+.accordion { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--bg-card); margin-bottom: 1rem; }
+.accordion-header { padding: 1.25rem 1.5rem; background: none; border: none; width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-body); font-weight: 600; font-size: 1.1rem; color: var(--text-primary); transition: background 0.2s; }
+.accordion-header:hover { background: var(--bg-hover); }
+.accordion-icon { transition: transform 0.3s; color: var(--accent-teal); }
+.accordion-content { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; border-top: 0 solid var(--border); }
+.accordion.active .accordion-icon { transform: rotate(180deg); }
+.accordion.active .accordion-content { padding: 1.5rem; max-height: 2000px; border-top-width: 1px; }
+
+/* ===== TABS ===== */
+.tabs-container { margin: 2rem 0; }
+.tabs-list { display: flex; border-bottom: 1px solid var(--border); gap: 1rem; margin-bottom: 1.5rem; overflow-x: auto; }
+.tab-btn { background: none; border: none; padding: 0.75rem 1.25rem; font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab-btn:hover { color: var(--text-primary); }
+.tab-btn.active { color: var(--accent-teal); border-bottom-color: var(--accent-teal); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn 0.4s ease; }
+
+/* ===== GLOSSARY & SEARCH ===== */
+.glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.glossary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: all 0.2s; }
+.glossary-card:hover { border-color: var(--accent-teal); background: var(--bg-hover); }
+.glossary-term { font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; color: var(--accent-teal); margin-bottom: 0.5rem; }
+.glossary-def { font-size: 0.875rem; color: var(--text-secondary); }
+
+/* ===== KEY VALUE LIST ===== */
+.kv-list { list-style: none; }
+.kv-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed var(--border); font-size: 0.9rem; }
+.kv-key { font-weight: 600; color: var(--text-secondary); }
+.kv-val { font-family: var(--font-mono); color: var(--accent-teal); }
+
+/* ===== FOOTER ===== */
+footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 4rem 0 2rem 0; color: var(--text-secondary); font-size: 0.9rem; }
+.footer-grid { display: grid; grid-template-
