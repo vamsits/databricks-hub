@@ -185,4 +185,55 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
 .card-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent-orange); }
 
 /* ===== ACCORDION ===== */
-.accordion { border: 1px solid var(--border); border
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.accordion-header {
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.accordion-header:hover { background: var(--bg-hover); }
+.accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  background: var(--bg-primary);
+  border-top: 0 solid var(--border);
+}
+.accordion.active .accordion-content {
+  padding: 1.5rem;
+  max-height: 2000px;
+  border-top-width: 1px;
+}
+.accordion-icon {
+  transition: transform 0.3s;
+  color: var(--text-muted);
+}
+.accordion.active .accordion-icon {
+  transform: rotate(180deg);
+  color: var(--accent-teal);
+}
+
+/* ===== BADGES & TAGS ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.badge-teal { background: rgba(0,194,168,0.1); color: var(--accent-teal); border: 1px solid rgba(0,194,168,0.2); }
+.badge-orange { background: rgba(255,107,53,0.1); color: var(--accent-
