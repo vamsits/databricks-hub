@@ -199,47 +199,4 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-.accordion-header:hover { background: var(--bg-hover); }
-.accordion-content {
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-  background: var(--bg-primary);
-  border-top: 0 solid var(--border);
-}
-.accordion.active .accordion-content {
-  padding: 1.5rem;
-  max-height: 2000px;
-  border-top-width: 1px;
-}
-.accordion-icon {
-  transition: transform 0.3s;
-  color: var(--text-muted);
-}
-.accordion.active .accordion-icon {
-  transform: rotate(180deg);
-  color: var(--accent-teal);
-}
-
-/* ===== BADGES & TAGS ===== */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.badge-teal { background: rgba(0,194,168,0.1); color: var(--accent-teal); border: 1px solid rgba(0,194,168,0.2); }
-.badge-orange { background: rgba(255,107,53,0.1); color: var(--accent-orange); border: 1px solid rgba(255,107,53,0.2); }
-.badge-blue { background: rgba(59,130,246,0.1); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.2); }
-.badge-purple { background: rgba(124,58,237,0.1); color: var(--accent-purple); border: 1px solid rgba(124,58,237,0.2); }
-
-/* ===== FOOTER ===== */
-footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 4rem 0 2rem 0; color: var(--text-secondary); font-size: 0.9rem; }
-.footer-grid { display: grid; grid-template-columns: 1.5
+  font-weight: 6
