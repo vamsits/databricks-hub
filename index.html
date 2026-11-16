@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The ultimate Databricks reference hub for data engineers, architects, and platform admins. Deep coverage of cost optimization, workload tuning, Delta Lake 4.4.1, Unity Catalog, MLflow 3.18.0, DBSQL 2025.35, and Spark 4.2 best practices.">
-<meta name="keywords" content="Databricks, Apache Spark 4.2.0, Delta Lake 4.4.1, MLflow 3.18.0, DBSQL 2025.35, Unity Catalog, Data Engineering, Cost Optimization, Lakehouse, Photon Engine, DBU, Azure Databricks, AWS Databricks">
+<meta name="keywords" content="Databricks, Apache Spark 4.2.0, Delta Lake 4.4.1, MLflow 3.18.0, DBSQL 2025.35, Unity Catalog, Data Engineering, Cost Optimization, Lakehouse, Photon Engine, DBU, Azure Databricks, AWS Databricks, Real-Time Mode, Genie One">
 <meta property="og:title" content="Databricks Knowledge Hub — The Ultimate Reference">
 <meta property="og:description" content="Comprehensive Databricks reference for data engineers. Cost optimization, workload tuning, Delta Lake 4.4.1, Unity Catalog, MLflow 3.18.0, and Spark 4.2 guidance.">
 <meta property="og:type" content="website">
@@ -196,94 +196,4 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
 .tab-container { margin: 1.5rem 0; }
 .tab-nav { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; overflow-x: auto; }
 .tab-btn { padding: 0.5rem 1rem; border-radius: 6px; background: none; border: none; color: var(--text-secondary); font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
-.tab-btn:hover { color: var(--text-primary); background: var(--bg-elevated); }
-.tab-btn.active { color: var(--accent-teal); background: var(--bg-elevated); border-bottom: 2px solid var(--accent-teal); }
-.tab-content { display: none; padding-top: 1.25rem; }
-.tab-content.active { display: block; }
-
-/* CALLOUTS */
-.callout { padding: 1.25rem 1.5rem; border-radius: var(--radius); border-left: 4px solid var(--accent-teal); background: rgba(0,194,168,0.05); margin: 1.25rem 0; }
-.callout-warning { border-left-color: var(--accent-amber); background: rgba(245,158,11,0.05); }
-.callout-title { font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; font-size: 0.95rem; }
-
-/* GLOSSARY & LISTS */
-.glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
-.glossary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: border-color 0.2s; }
-.glossary-card:hover { border-color: var(--accent-teal); }
-.glossary-term { font-family: var(--font-mono); font-weight: 600; color: var(--accent-teal); margin-bottom: 0.4rem; font-size: 1rem; }
-
-/* FOOTER */
-footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 3rem 0 2rem 0; font-size: 0.875rem; color: var(--text-muted); }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .nav-links { display: none; }
-  .nav-links.mobile-open { display: flex; flex-direction: column; position: absolute; top: var(--nav-height); left: 0; right: 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 1rem; gap: 0.5rem; }
-  .hamburger { display: flex; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
-}
-</style>
-</head>
-<body>
-
-<!-- NAVBAR -->
-<nav id="navbar">
-  <div class="container nav-inner">
-    <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">❖</div>
-      <span>Databricks Hub</span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#whats-new">What's New</a>
-      <a href="#sql">Databricks SQL</a>
-      <a href="#pyspark">PySpark 4.2</a>
-      <a href="#glossary">Glossary</a>
-      <a href="#resources">Resources</a>
-    </div>
-    <div class="nav-actions">
-      <div class="nav-search">
-        <span>🔍</span>
-        <input type="text" id="searchInput" placeholder="Search reference..." onkeyup="filterContent()">
-      </div>
-      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">🌙</button>
-      <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO SECTION -->
-<section id="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-tag">⚡ Updated November 2026 Reference</div>
-        <h1 class="hero-title">Architecting <span>High-Performance</span> Databricks Data Platforms</h1>
-        <p class="hero-desc">The single source of truth for Databricks Lakehouse architecture, PySpark 4.2 tuning, Databricks SQL 2025.35 features, Delta Lake 4.4.1, and Unity Catalog optimization.</p>
-        <div class="flex gap-4" style="margin-bottom: 2rem;">
-          <a href="#sql" class="btn btn-primary">Databricks SQL 2025.35</a>
-          <a href="#pyspark" class="btn btn-secondary">PySpark 4.2 Guide</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-num">Spark 4.2</div>
-            <div class="stat-label">Apache Engine</div>
-          </div>
-          <div>
-            <div class="stat-num">Delta 4.4.1</div>
-            <div class="stat-label">Storage Format</div>
-          </div>
-          <div>
-            <div class="stat-num">DBSQL 35</div>
-            <div class="stat-label">Warehouse Build</div>
-          </div>
-          <div>
-            <div class="stat-num">MLflow 3.18</div>
-            <div class="stat-label">GenAI & Tracing</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
+.tab-btn:hover { color
