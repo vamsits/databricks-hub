@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The ultimate Databricks reference hub for data engineers, architects, and platform admins. Deep coverage of cost optimization, workload tuning, Delta Lake 4.4.1, Unity Catalog, MLflow 3.18.0, DBSQL 2025.35, and Spark 4.2 best practices.">
-<meta name="keywords" content="Databricks, Apache Spark 4.2.0, Delta Lake 4.4.1, MLflow 3.18.0, DBSQL 2025.35, Unity Catalog, Data Engineering, Cost Optimization, Lakehouse, Photon Engine, DBU, Azure Databricks, AWS Databricks, Real-Time Mode, Genie One">
+<meta name="description" content="The ultimate Databricks reference hub for data engineers, architects, and platform admins. Deep coverage of cost optimization, workload tuning, Delta Lake 4.4.1, Unity Catalog, MLflow 3.18.0, DBSQL 2025.35, Spark 4.2, and Genie ZeroOps best practices.">
+<meta name="keywords" content="Databricks, Apache Spark 4.2.0, Delta Lake 4.4.1, MLflow 3.18.0, DBSQL 2025.35, Unity Catalog, Data Engineering, Cost Optimization, Lakehouse, Photon Engine, DBU, Azure Databricks, AWS Databricks, Genie ZeroOps, Lakebase Postgres Sink">
 <meta property="og:title" content="Databricks Knowledge Hub — The Ultimate Reference">
 <meta property="og:description" content="Comprehensive Databricks reference for data engineers. Cost optimization, workload tuning, Delta Lake 4.4.1, Unity Catalog, MLflow 3.18.0, and Spark 4.2 guidance.">
 <meta property="og:type" content="website">
@@ -119,7 +119,7 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
 [data-theme="light"] #navbar { background: rgba(248,249,252,0.9); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-height); gap: 1.5rem; }
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--text-primary); text-decoration: none; white-space: nowrap; }
-.nav-logo-icon { width: 32px; height: 32px; background: var(--gradient-accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; color: white; }
+.nav-logo-icon { width: 32px; height: 32px; background: var(--gradient-accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; color: white; font-weight: 800; }
 .nav-links { display: flex; align-items: center; gap: 0.25rem; }
 .nav-links a { padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); transition: all 0.2s; }
 .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
@@ -141,7 +141,7 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
 
 /* ===== HERO ===== */
 #hero {
-  min-height: 70vh;
+  min-height: 65vh;
   background: var(--gradient-hero);
   display: flex; align-items: center;
   padding-top: calc(var(--nav-height) + 2rem);
@@ -187,13 +187,5 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--bord
 .accordion-header { padding: 1.25rem 1.5rem; background: var(--bg-card); cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; transition: background 0.2s; }
 .accordion-header:hover { background: var(--bg-elevated); }
 .accordion-title { font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
-.accordion-icon { transition: transform 0.3s; color: var(--text-muted); }
-.accordion-item.active .accordion-icon { transform: rotate(180deg); color: var(--accent-teal); }
-.accordion-content { display: none; padding: 1.5rem; border-top: 1px solid var(--border); background: var(--bg-secondary); }
-.accordion-item.active .accordion-content { display: block; }
-
-/* TABS */
-.tab-container { margin: 1.5rem 0; }
-.tab-nav { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; overflow-x: auto; }
-.tab-btn { padding: 0.5rem 1rem; border-radius: 6px; background: none; border: none; color: var(--text-secondary); font-family: var(--font-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
-.tab-btn:hover { color
+.accordion-icon { transition: transform 0.3s; color: var(--text-muted); font-size: 0.9rem; }
+.accordion-item.active .accordion-icon { transform: rotate(180deg); color: var
